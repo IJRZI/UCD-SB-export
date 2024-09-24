@@ -11,7 +11,7 @@ from datetime import datetime, timedelta
 
 
 
-
+# start_date 和 end_date 分别是课程的起始和结束日期，格式为 "YYYY，MM，DD"
 start_date = datetime(2024, 9, 25)
 end_date = datetime(2024, 12, 8)
 
@@ -173,7 +173,7 @@ def create_ics_from_txt(input_file, meeting_types_file, output_file, start_date,
                     current_date += timedelta(days=1)
             except ValueError:
                 print()
-    # 将日历内容保存到ICS文件中
+#导出ics
     with open(output_file, 'wb') as f:
         f.write(calendar.to_ical())
 
@@ -181,7 +181,7 @@ def create_ics_from_txt(input_file, meeting_types_file, output_file, start_date,
 # txt_file 是输入文件，包含课程信息的txt文件路径
 # meeting_types_file 是输入文件，包含所有课程类型的txt文件路径
 # ics_file 是输出文件，生成的ICS文件路径
-# start_date 和 end_date 分别是课程的起始和结束日期，格式为 "YYYY-MM-DD"
+
 txt_file = "course_info.txt"
 meeting_types_file = "meeting_types.txt"
 ics_file = "course_schedule.ics"
